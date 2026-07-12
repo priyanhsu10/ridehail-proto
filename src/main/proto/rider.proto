@@ -23,7 +23,7 @@ message Rider {
 }
 
 message ValidateRiderRequest {
-  string rider_id = 1;
+  int64 rider_id = 1;
 }
 
 message ValidateRiderResponse {
