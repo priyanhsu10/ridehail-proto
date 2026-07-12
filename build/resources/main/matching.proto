@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ridehail.matching.v1;
+
+option java_package = "com.ridehail.matching.grpc";
+option java_multiple_files = true;
+
+service MatchingService {
+  // Called synchronously by Trip Service. Internally calls LocationService.FindNearbyDrivers
+  // then applies ranking (distance, rating, surge rules).
+  rpc FindDriverForTrip(FindDriverForTripRequest) returns (FindDriverForTripResponse);
+}
+
+message FindDriverForTripRequest {
+  string trip_id = 1;
+  double pickup_lat = 2;
+  double pickup_lng = 3;
+  repeated string exclude_driver_ids = 4; // drivers who already rejected this trip - grows on re-match
+}
+
+message FindDriverForTripResponse {
+  bool match_found = 1;
+  string driver_id = 2;
+  double estimated_eta_minutes = 3;
+}
