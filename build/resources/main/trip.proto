@@ -13,13 +13,13 @@ service TripService {
 }
 
 message GetTripRequest {
-  string trip_id = 1;
+  int64 trip_id = 1;
 }
 
 message Trip {
-  string trip_id = 1;
-  string rider_id = 2;
-  string driver_id = 3; // empty until matched
+  int64  trip_id = 1;
+  int64 rider_id = 2;
+  int64 driver_id = 3; // empty until matched
   TripStatus status = 4;
   double pickup_lat = 5;
   double pickup_lng = 6;

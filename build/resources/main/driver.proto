@@ -11,11 +11,11 @@ service DriverService {
 }
 
 message GetDriverRequest {
-  string driver_id = 1;
+  int64 driver_id = 1;
 }
 
 message Driver {
-  string driver_id = 1;
+  int64 driver_id = 1;
   string name = 2;
   string vehicle_plate = 3;
   double rating = 4;
@@ -30,7 +30,7 @@ enum DriverStatus {
 }
 
 message UpdateAvailabilityRequest {
-  string driver_id = 1;
+   int64 driver_id = 1;
   DriverStatus status = 2;
 }
 

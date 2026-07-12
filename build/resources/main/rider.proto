@@ -11,11 +11,11 @@ service RiderService {
 }
 
 message GetRiderRequest {
-  string rider_id = 1;
+  int64 rider_id = 1;
 }
 
 message Rider {
-  string rider_id = 1;
+  int64 rider_id = 1;
   string name = 2;
   string phone_number = 3;
   double rating = 4;
