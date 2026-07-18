@@ -2,7 +2,7 @@
 bin
 git
 build
-/build/
+build/
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar

@@ -16,7 +16,7 @@ message FindNearbyDriversRequest {
   double pickup_lng = 2;
   double radius_km = 3;
   int32 max_results = 4;
-  repeated string exclude_driver_ids = 5; // drivers who already rejected this trip
+  repeated int64 exclude_driver_ids = 5; // drivers who already rejected this trip
 }
 
 message FindNearbyDriversResponse {
@@ -24,18 +24,18 @@ message FindNearbyDriversResponse {
 }
 
 message NearbyDriver {
-  string driver_id = 1;
+   int64 driver_id = 1;
   double distance_km = 2;
   double lat = 3;
   double lng = 4;
 }
 
 message GetDriverLocationRequest {
-  string driver_id = 1;
+  int64 driver_id = 1;
 }
 
 message DriverLocation {
-  string driver_id = 1;
+  int64 driver_id = 1;
   double lat = 2;
   double lng = 3;
   int64 updated_at_epoch_ms = 4;
